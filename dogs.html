@@ -1,0 +1,51 @@
+<!-- dogs.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dogs - Class Activities</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="libs/simple-slider.js"></script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="assignment2_Awumah.html">Home</a></li>
+      <li><a href="stocks.html">Stocks</a></li>
+      <li><a href="dogs.html">Dogs</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>Dog Gallery</h1>
+    <div id="dogCarousel" class="simple-slider">
+      <!-- Dog images will be inserted here -->
+    </div>
+
+    <h2>Dog Breeds</h2>
+    <div id="dogBreedsContainer">
+      <!-- Breed buttons will be dynamically created -->
+    </div>
+
+    <div id="dogBreedInfo" style="display:none;">
+      <h3 id="breedName"></h3>
+      <p id="breedDescription"></p>
+      <p id="breedLifeSpan"></p>
+    </div>
+  </main>
+
+  <div id="audio-controls">
+    <h3>Voice Commands:</h3>
+    <ul>
+      <li>"Load Dog Breed *breed" - Loads the breed info</li>
+      <li>"Navigate to dogs" - Navigates to this page</li>
+    </ul>
+    <button onclick="annyang.start()">Turn On Audio</button>
+    <button onclick="annyang.abort()">Turn Off Audio</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script src="js/annyang-commands.js"></script>
+  <script src="js/dogs.js"></script>
+</body>
+</html>
