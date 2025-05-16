@@ -1,4 +1,4 @@
-// js/annyang-commands.js
+
 if (annyang) {
     const commands = {
       'hello': () => {

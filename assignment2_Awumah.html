@@ -1,32 +1,17 @@
-<!-- Directory Structure -->
-<!--
-assignment2/
-  index.html
-  stocks.html
-  dogs.html
-  /css/styles.css
-  /js/main.js
-  /js/stocks.js
-  /js/dogs.js
-  /js/annyang-commands.js
-  /libs/chart.min.js
-  /libs/simple-slider.js
--->
 
-<!-- index.html (Home Page) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home - Class Activities</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
 </head>
 <body>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="assignment2_Awumah.html">Home</a></li>
       <li><a href="stocks.html">Stocks</a></li>
       <li><a href="dogs.html">Dogs</a></li>
     </ul>
@@ -47,7 +32,7 @@ assignment2/
     <button onclick="annyang.start()">Turn On Audio</button>
     <button onclick="annyang.abort()">Turn Off Audio</button>
   </div>
-  <script src="js/annyang-commands.js"></script>
+  <script src="commands.js"></script>
   <script>
     document.getElementById('stocksBtn').onclick = () => location.href = 'stocks.html';
     document.getElementById('dogsBtn').onclick = () => location.href = 'dogs.html';
@@ -60,75 +45,3 @@ assignment2/
 </body>
 </html>
 
-/* css/styles.css */
-body {
-  font-family: Arial;
-  background-color: #f2f2f2;
-}
-nav ul {
-  display: flex;
-  list-style: none;
-  background: #333;
-}
-nav li {
-  margin: 10px;
-}
-nav li a {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-}
-nav li:hover {
-  background: #555;
-}
-.custom-btn {
-  background-color: #008CBA;
-  color: white;
-  padding: 10px 20px;
-  margin: 10px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.custom-btn:hover {
-  background-color: #005f6a;
-}
-#audio-controls {
-  position: relative;
-  margin-top: 50px;
-  background: #ddd;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-// js/annyang-commands.js
-if (annyang) {
-  const commands = {
-    'hello': () => alert('Hello World'),
-    'change the color to *color': (color) => {
-      document.body.style.backgroundColor = color;
-    },
-    'navigate to *page': (page) => {
-      const p = page.toLowerCase();
-      if (['home', 'stocks', 'dogs'].includes(p)) {
-        location.href = `${p}.html`;
-      }
-    },
-    'lookup *stock': (stock) => {
-      document.querySelector('#stockInput').value = stock.toUpperCase();
-      document.querySelector('#lookupBtn').click();
-    },
-    'load dog breed *breed': (breed) => {
-      const btns = document.querySelectorAll('.breed-btn');
-      btns.forEach(btn => {
-        if (btn.innerText.toLowerCase() === breed.toLowerCase()) {
-          btn.click();
-        }
-      });
-    }
-  };
-  annyang.addCommands(commands);
-  annyang.start();
-}
-
-<!-- Placeholder: stocks.html, dogs.html, js/stocks.js, js/dogs.js will be added in next step. Let me know if you want the full code for those too. -->
